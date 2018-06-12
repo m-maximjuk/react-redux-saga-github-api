@@ -1,6 +1,6 @@
 # Redux-saga-githubAPI
 
-## This example is app that use redux-saga to search the users and their repositories.
+### This example is app that use redux-saga to search the users and their repositories.
 
 ### This app is consist of front-end and backend.
 #### Skill 
@@ -11,14 +11,31 @@
  - bootstrap
  - CSS3
  
- ## Backend
+ ### Prerequisites
  
-#### Method of runing
+ You will need the following resources properly installed on the machine.
+ - Git
+ - Node.js(with NPM)
+ - MongoDB
+ 
 
-- npm i
-- node sever.js  (nodemon)
+### Getting Started
 
-localhost:8080
+ ``` 
+ #Install the dependencies.
+ $cd .
+ $npm install
+ ```
 
-## Frontend
-  
+### Run the App
+```
+$ cd backend
+$ nodemon
+
+$ cd frontend
+$ npm start
+```
+
+By default, you can visit the API in your web browser http:// localhost:8000
+
+And you can access the frontend by visiting http://localhost:3000
