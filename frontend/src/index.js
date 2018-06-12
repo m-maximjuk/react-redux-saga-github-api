@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configStore();
-const user = sessionStorage.getItem('username');
 const loggedIn = sessionStorage.getItem('loggedIn');
 
 ReactDOM.render(
@@ -20,14 +19,14 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path="/" render={() =>(
-          user !== '' && loggedIn ? (<Route component={App} />)
-          : (<Route  component={Login} />)
+          loggedIn ? (<Route component={App} />)
+          : (<Route component={Login} />)
+        )} />
+        <Route path="/app" render={() =>(
+          loggedIn ? (<Route component={App} />)
+          : (<Route component={Login} />)
         )} />
         <Route path="/login" component={Login}/>
-        <Route path="/app" render={() =>(
-          user !== '' && loggedIn ? (<Route component={App} />)
-          : (<Route  component={Login} />)
-        )} />
       </Switch>
     </Router>
 	</Provider>,
