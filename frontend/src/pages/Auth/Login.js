@@ -9,12 +9,9 @@ class LoginPage extends React.Component {
     this.logSuccess = this.logSuccess.bind(this);
     sessionStorage.clear();
   };
-  logSuccess() {
-    const user = sessionStorage.getItem('username');
-    const loggedIn = sessionStorage.getItem('loggedIn');
-    if(user !== '' && loggedIn){
-      this.props.history.push("/app");
-    }
+  logSuccess(){
+    this.props.history.push("/app");
+    window.location.reload();
   }
   userForm = (e) => {
     const that = this;
@@ -51,7 +48,7 @@ class LoginPage extends React.Component {
                 </div>
                 <button className="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
             </form>
-            <a href="#" className="forgot-password">
+            <a href="" className="forgot-password">
                 Forgot the password?
             </a>
         </div>
