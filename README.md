@@ -39,3 +39,6 @@ $ npm start
 By default, you can visit the API in your web browser http:// localhost:8000
 
 And you can access the frontend by visiting http://localhost:3000
+
+### Screenshot
+![untitled](https://user-images.githubusercontent.com/39380399/41282101-cffa596e-6e65-11e8-8308-0d42133be615.png)
