@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Card, CardImg, Label, UncontrolledAlert} from 'reactstrap';
+import { Container,Button, Row, Col, Card, CardImg, Label, UncontrolledAlert} from 'reactstrap';
 import SearchForm from './SearchForm';
 import './App.css';
 const username = sessionStorage.getItem("username");
@@ -7,9 +7,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.usersearch = this.usersearch.bind(this);
+    this.logout = this.logout.bind(this);
   }
   componentWillMount(){
     this.props.usersearch(username);
+  }
+  logout(){
+    sessionStorage.clear();
+    this.props.history.push("/login");
   }
   usersearch({ keyword }) {
     this.props.usersearch(keyword);
@@ -17,12 +22,16 @@ class App extends Component {
   render(){
     const { loading, userdata, errors} = this.props;
     return (
-      <div className="App">
+      <div className="App mt-5">
         <Container className="text-center">
           <Row>
-            <Col>
+            <Col sm="10">
               <h1 >Github API_Redux-saga</h1>
             </Col>
+            <Col sm="2">
+              <Button color="warning" className="mt-4" onClick={this.logout}>Logout</Button>
+            </Col>
+            
           </Row>
           <Row >
             <Col>
